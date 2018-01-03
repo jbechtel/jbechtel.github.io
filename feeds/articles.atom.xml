@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Blog - articles</title><link href="http://jbechtel.github.io/" rel="alternate"></link><link href="http://jbechtel.github.io/feeds/articles.atom.xml" rel="self"></link><id>http://jbechtel.github.io/</id><updated>2018-01-02T17:20:00-08:00</updated><entry><title>New Blog Coming Soon</title><link href="http://jbechtel.github.io/blog/2018/01/02/new-blog/" rel="alternate"></link><published>2018-01-02T17:20:00-08:00</published><updated>2018-01-02T17:20:00-08:00</updated><author><name>Jonathon Bechtel</name></author><id>tag:jbechtel.github.io,2018-01-02:blog/2018/01/02/new-blog/</id><summary type="html">
+
+&lt;p&gt;Working on a new data science blog...&lt;/p&gt;
+&lt;p&gt;Stay tuned for updates&lt;/p&gt;
+</summary><category term="blog"></category><category term="jupyter"></category></entry></feed>
