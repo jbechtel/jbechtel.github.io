@@ -2816,7 +2816,7 @@ We'll use Seaborn's <code>.kdeplot()</code> method so we can cleanly distinguish
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Often the features will require some preprocessing. Scikit-learn makes this easy to do with the Pipeline module. Here, however, we are just going to use the features as they are provided. We'll just specify which classifier we want which is Gaussian Naive Bayes. GaussianNB treats models each feature as a gaussian within each class, which, as we saw above, may be an adequate representation of the data. The one drawback of GaussianNB is that is treats each feature independently (hence 'naive' bayes) so that coupling between features is ignored.</p>
+<p>Often the features will require some preprocessing. However, since we are already given distributions of numerical data, we can go straight to training our models.</p>
 
 </div>
 </div>
