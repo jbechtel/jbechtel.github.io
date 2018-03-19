@@ -3,6 +3,7 @@
 
 &lt;p&gt;This year I participated in Kaggle's March Madness Competition. However, this isn't your typical office pool; instead participants are tasked with assigning every possible match-up in the field of 64 with a probability that a certain team will win.&lt;/p&gt;
 &lt;p&gt;In this post, I will describe my simple approach to building a machine learning model to predict winning percentages for March Madness games. Then, we'll see how it performed for this years competition!&lt;/p&gt;
+&lt;p&gt;&lt;img src="http://jbechtel.github.io/images/predicted_bracket.png" alt='[img: bracket]'&gt;
 </summary><category term="kaggle"></category><category term="logistic regression"></category></entry><entry><title>Classifying Wines</title><link href="http://jbechtel.github.io/blog/2018/02/06/wines/" rel="alternate"></link><published>2018-02-06T06:00:00-08:00</published><updated>2018-02-06T06:00:00-08:00</updated><author><name>Jonathon Bechtel</name></author><id>tag:jbechtel.github.io,2018-02-06:blog/2018/02/06/wines/</id><summary type="html">
 Let's kick off the blog with learning about wines, or rather training classifiers to learn wines for us ;)&lt;/p&gt;
 &lt;p&gt;In this post, we'll take a look at the &lt;a href="https://archive.ics.uci.edu/ml/datasets/wine"&gt;UCI Wine data&lt;/a&gt;, and then train several scikit-learn classifiers to predict wine classes.&lt;/p&gt;
