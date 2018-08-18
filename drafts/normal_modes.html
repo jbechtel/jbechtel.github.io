@@ -6,7 +6,7 @@
         <meta name="author" content="Jonathon Bechtel">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <title>Welcome! | Data Blog</title>
+        <title>Calculating Normal Modes of Vibration | Data Blog</title>
 
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -428,8 +428,8 @@ article .meta a.comments_btn:hover {
 <div class="container post">
     <article>
         <header>
-            <h1>Welcome!</h1>
-            <time datetime="article.date.isoformat()" pubdate>Tue 02 January 2018</time>
+            <h1>Calculating Normal Modes of Vibration</h1>
+            <time datetime="article.date.isoformat()" pubdate>Tue 24 July 2018</time>
         </header>
 
         <div class="article_content">
@@ -1409,10 +1409,75 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Normal-Modes-of-Vibration">Normal Modes of Vibration<a class="anchor-link" href="#Normal-Modes-of-Vibration">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- PELICAN_BEGIN_SUMMARY -->
 
+<p>This post explores the use of symmetry to construct normal modes of molecular vibrations. 
+<img src="https://github.com/jbechtel/jbechtel.github.io-source/blob/master/content/images/R9hxJ.jpg" alt='[img: jpg]'></p>
+<video controls src="http://jbechtel.github.io-source/images/normal_modes.mp4" />
 
-<p>Hello! My name is Jonathon Bechtel, and this blog will document my exploration of data science techniques using jupyter notebooks.</p>
+<!-- PELICAN_END_SUMMARY -->
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="http://jbechtel.github.io/images/adps_cryst-01.png" alt='[img: adps]'></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="../../images/R9hxJ.jpg" alt='[img: jpg]'></p>
+<video controls src="../../images/normal_modes.mp4" />
+
+<p><img src="http://jbechtel.github.io/images/adps_cryst-01.png" alt='[img: adps]'>
+<img src="/Users/bechtel/github/jbechtel.github.io-source/content/images/images/R9hxJ.jpg" alt='[img: jpg]'>
+<img src="../../images/normal_modes.mp4" alt='[img: jpg]'></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Displacement-DoFs">Displacement DoFs<a class="anchor-link" href="#Displacement-DoFs">&#182;</a></h2><p>The total number of degrees of freedom of a 3D molecule of $N$ atoms is $3N$ since each atom can displace in the $x$, $y$, or $z$ direction. This means that we can define a $3N$ dimensional vector-space that spans all of these degrees of freedom. A coordinate in this space is expressed as a $3N$ dimensional vector $\mathbf{x}$. The basis that one first considers in this space is the simple Cartesian basis. However, a simpler basis is achievable which separates this space into irreducible subspaces.</p>
+<h2 id="Sym-Representation">Sym Representation<a class="anchor-link" href="#Sym-Representation">&#182;</a></h2><p>Vectors $\mathbf{x}$ transform as 
+$$\mathbf{x}' = \mathbf{M}^{(\mathbf{x})}\mathbf{x}$$</p>
+<p>given a representation $\mathbf{M}$ of the point group of the molecule. Given a new basis, $$\mathbf{\eta}=\mathbf{Q}\mathbf{x}$$, what is the symmetry representaiton in the new basis? Well, first let's write down all of the transformations that we can define. We already showed how $\mathbf{x}$ transforms, and we can equivalently write how a symmetry operation acts on $\mathbf{\eta}$ as $$\mathbf{\eta}' = \mathbf{M}^{(\mathbf{\eta})} \mathbf{\eta}$$.</p>
+<p>Now we can combine these equations to find:
+$$
+\begin{align}
+\mathbf{\eta}' &amp;= \mathbf{M}^{(\mathbf{\eta})} \mathbf{\eta}\\
+&amp;=\mathbf{M}^{(\mathbf{\eta})} \mathbf{Q}\mathbf{x}\\
+&amp;=\mathbf{Q}\mathbf{x}'\\
+&amp;=\mathbf{Q}\mathbf{M}^{(\mathbf{x})}\mathbf{x}\\
+\end{align}
+$$
+Hence 
+$$
+\begin{align}
+\implies \mathbf{M}^{(\mathbf{\eta})} \mathbf{Q}&amp;=\mathbf{Q}\mathbf{M}^{(\mathbf{x})}\\
+\mathbf{M}^{(\mathbf{\eta})} &amp;=\mathbf{Q}\mathbf{M}^{(\mathbf{x})} \mathbf{Q}^{\top}\\
+\end{align}
+$$
+where $\mathbf{Q}^{-1} = \mathbf{Q}^{\top}$</p>
+<p>Our goal is to find a linear transformation $\mathbf{Q}$ such that $\mathbf{M}^{(\mathbf{\eta})}$ is block diagonal.</p>
+<p>It turns out that, given a symmetry representation $\mathbf{M}^{(\mathbf{x})}$, there are algorithms that exist to find $\mathbf{Q}$, which we explore below.</p>
+<h2 id="-"> <a class="anchor-link" href="#-">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -1450,27 +1515,13 @@ h6:hover .anchor-link {
 
         <div class="meta">
             <div>
-                    <a href="http://jbechtel.github.io/tag/bayes.html" class="tag">bayes</a>
-                    <a href="http://jbechtel.github.io/tag/jupyter.html" class="tag">jupyter</a>
+                    <a href="http://jbechtel.github.io/tag/symmetry.html" class="tag">symmetry</a>
+                    <a href="http://jbechtel.github.io/tag/vibrations.html" class="tag">vibrations</a>
+                    <a href="http://jbechtel.github.io/tag/linear-algebra.html" class="tag">linear algebra</a>
             </div>
         </div>
     </article>
 
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div>
-    <script type="text/javascript">
-      var disqus_shortname = 'jonathonbechtel';
-      var disqus_identifier = '/blog/2018/01/02/welcome/';
-      var disqus_url = 'http://jbechtel.github.io/blog/2018/01/02/welcome/';
-      var disqus_title = 'Welcome!';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = "//" + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-  </section>
 
 </div>
 
