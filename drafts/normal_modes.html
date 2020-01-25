@@ -1418,21 +1418,12 @@ h6:hover .anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <!-- PELICAN_BEGIN_SUMMARY -->
+If you've struggled with finding molecular normal modes, this post is for you. Instead of using the character table and calculating symmetry operations by hand, I will introduce a very general method for finding the normal modes that is all done algorithmically. 
 
-<p>This post explores the use of symmetry to construct normal modes of molecular vibrations. 
-<img src="https://github.com/jbechtel/jbechtel.github.io-source/blob/master/content/images/R9hxJ.jpg" alt='[img: jpg]'></p>
-<video controls src="http://jbechtel.github.io-source/images/normal_modes.mp4" />
+This mode shows how to find the normal modes given the symmetry operations of a molecule or cluster. The key is to find a linear transformation from the Cartesian basis to a symmetry adapted basis that block-diagonalizes the symmetry representation. The three normal modes of an equilateral triangle are shown here, and this post explores how to calculate and plot these modes.
+<video controls src="http://jbechtel.github.io/images/normal_modes.mp4" />
 
 <!-- PELICAN_END_SUMMARY -->
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="http://jbechtel.github.io/images/adps_cryst-01.png" alt='[img: adps]'></p>
-
 </div>
 </div>
 </div>
@@ -1454,7 +1445,8 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Displacement-DoFs">Displacement DoFs<a class="anchor-link" href="#Displacement-DoFs">&#182;</a></h2><p>The total number of degrees of freedom of a 3D molecule of $N$ atoms is $3N$ since each atom can displace in the $x$, $y$, or $z$ direction. This means that we can define a $3N$ dimensional vector-space that spans all of these degrees of freedom. A coordinate in this space is expressed as a $3N$ dimensional vector $\mathbf{x}$. The basis that one first considers in this space is the simple Cartesian basis. However, a simpler basis is achievable which separates this space into irreducible subspaces.</p>
+<h2 id="Displacement-DoFs">Displacement DoFs<a class="anchor-link" href="#Displacement-DoFs">&#182;</a></h2><p>We begin by considering all of the available degrees of freedom (dofs) of our molecule. In 2D, each atom can move in two directions ($x$ or $y$) so there a total of $2\times N$ dofs where $N$ is the number of atoms in the molecule.</p>
+<p>The total number of degrees of freedom of a 3D molecule of $N$ atoms is $3N$ since each atom can displace in the $x$, $y$, or $z$ direction. This means that we can define a $3N$ dimensional vector-space that spans all of these degrees of freedom. A coordinate in this space is expressed as a $3N$ dimensional vector $\mathbf{x}$. The basis that one first considers in this space is the simple Cartesian basis. However, a simpler basis is achievable which separates this space into irreducible subspaces.</p>
 <h2 id="Sym-Representation">Sym Representation<a class="anchor-link" href="#Sym-Representation">&#182;</a></h2><p>Vectors $\mathbf{x}$ transform as 
 $$\mathbf{x}' = \mathbf{M}^{(\mathbf{x})}\mathbf{x}$$</p>
 <p>given a representation $\mathbf{M}$ of the point group of the molecule. Given a new basis, $$\mathbf{\eta}=\mathbf{Q}\mathbf{x}$$, what is the symmetry representaiton in the new basis? Well, first let's write down all of the transformations that we can define. We already showed how $\mathbf{x}$ transforms, and we can equivalently write how a symmetry operation acts on $\mathbf{\eta}$ as $$\mathbf{\eta}' = \mathbf{M}^{(\mathbf{\eta})} \mathbf{\eta}$$.</p>
